@@ -50,12 +50,13 @@ details[open] .plus{transform:rotate(45deg)}
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:80px}
 .float-wa{position:fixed;right:16px;bottom:16px;z-index:50;display:none;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#1F7A4A;color:#fff!important;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-@media (max-width:760px){.float-wa{display:inline-flex}header nav a:not(.wa){display:none}}
+@media (max-width:760px){.float-wa{display:inline-flex}header nav a:not(.wa):not(.country){display:none}}
 </style>
 </head>
 <body>
 <div style="min-height: 100%; background: #FBF6EC; color: #1D1A16; font-family: 'DM Sans', system-ui, sans-serif; font-size: 19px; line-height: 1.6">
 
+<div style="background: #6B2A1A; color: #FBF6EC; font-size: 15px; text-align: center; padding: 8px 16px">In Ghana? <a href="ghana/" style="color: #E9CB86; font-weight: 700">See prices in cedis (GH₵) →</a></div>
 <!-- TOP BAR -->
 <header style="position: sticky; top: 0; z-index: 20; background: rgba(251,246,236,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #E8DDC7">
 <div style="max-width: 1180px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
@@ -546,7 +547,7 @@ CHAT WITH US ON WHATSAPP</a>
   document.querySelectorAll("[data-wa-display]").forEach(function(s){s.textContent=num.indexOf("234")===0?"0"+num.slice(3):"+"+num;});
   document.querySelectorAll(".pack").forEach(function(b){b.addEventListener("click",function(){select(Number(b.dataset.n));});});
   document.querySelectorAll("[data-wa]").forEach(function(a){a.addEventListener("click",function(){
-    try{ if(window.fbq){ var k=a.getAttribute("data-wa"); fbq("track","Contact",{content_name: k==="bulk"?"Bulk enquiry":"Dates Powder order"}); } }catch(e){}
+    try{ if(window.fbq){ var k=a.getAttribute("data-wa"); fbq("track","Contact",{country:"NG",content_name: k==="bulk"?"Bulk enquiry":"Dates Powder order"}); } }catch(e){}
   });});
   select(DEFAULT_PACK);
 })();
